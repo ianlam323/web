@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IGC HK Education Resources</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #ff7b00;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    section {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      color: #ff7b00;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      display: block;
+      margin: 0.5rem 0;
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      background-color: #ff7b00;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn:hover {
+      background-color: #e96c00;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>IGC HK Education Resources</header>
+
+  <main>
+    <!-- Physics Section -->
+    <section id="physics">
+      <h2>Physics</h2>
+      <a href="https://www2.igchkshop.dpdns.org/mock1/Notes%20on%20Physics.pdf" target="_blank">Notes of Physics</a>
+      <a href="https://www2.igchkshop.dpdns.org/mock1/Predicted%20QER%20Physics.pdf" target="_blank">Predicted QER Physics</a>
+    </section>
+
+    <!-- Biology Section -->
+    <section id="biology">
+      <h2>Biology</h2>
+      <a href="https://www2.igchkshop.dpdns.org/mock1/Notes%20on%20Biology.pdf" target="_blank">Notes of Biology</a>
+      <a href="https://www2.igchkshop.dpdns.org/mock1/Predicted%20QER%20Biology.pdf" target="_blank">Predicted QER Biology</a>
+    </section>
+
+    <!-- A2 Paper Section -->
+    <section id="a2-paper">
+      <h2>A2 Paper</h2>
+      <p>This section is password protected.</p>
+      <input type="password" id="a2password" placeholder="Enter password">
+      <button class="btn" onclick="checkPassword()">Access A2 Paper</button>
+    </section>
+
+    <!-- Chemistry Section -->
+    <section id="chemistry">
+      <h2>Chemistry</h2>
+      <p>🚧 This section is currently under construction.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 IGC HK Education | All Rights Reserved
+  </footer>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('a2password').value.trim();
+      if (input === 'a2') {
+        window.location.href = 'https://www2.igchkshop.dpdns.org/a2-paper';
+      } else {
+        alert('Incorrect password. Please try again.');
+      }
+    }
+  </script>
+
+</body>
+</html>
