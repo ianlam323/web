@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IGC HK Exam Resources</title>
+  <title>IGC HK Exam - WJEC Resources</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -17,9 +17,10 @@
       background-color: #ff7b00;
       color: white;
       text-align: center;
-      padding: 1rem 0;
-      font-size: 1.5rem;
+      padding: 1.2rem 0;
+      font-size: 1.7rem;
       font-weight: bold;
+      letter-spacing: 0.5px;
     }
 
     main {
@@ -31,27 +32,46 @@
 
     section {
       background-color: white;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
+      padding: 1.8rem;
       text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    section:hover {
+      transform: translateY(-3px);
     }
 
     h2 {
       color: #ff7b00;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
-    a {
+    .link-btn {
       display: block;
-      margin: 0.5rem 0;
+      background-color: #ff7b00;
+      color: white;
       text-decoration: none;
-      color: #0066cc;
-      font-weight: 500;
+      padding: 0.75rem 1rem;
+      margin: 0.6rem auto;
+      border-radius: 8px;
+      width: 80%;
+      font-weight: 600;
+      transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .link-btn:hover {
+      background-color: #e96c00;
+      transform: scale(1.03);
+    }
+
+    input[type="password"] {
+      padding: 0.5rem;
+      width: 70%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
     }
 
     .btn {
@@ -59,10 +79,10 @@
       color: white;
       padding: 0.5rem 1rem;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
       font-size: 1rem;
-      margin-top: 0.5rem;
+      transition: background-color 0.2s ease;
     }
 
     .btn:hover {
@@ -74,26 +94,27 @@
       padding: 1rem;
       font-size: 0.9rem;
       color: #666;
+      border-top: 1px solid #ddd;
     }
   </style>
 </head>
 <body>
 
-  <header>IGC HK Exam Resources</header>
+  <header>IGC HK Exam – WJEC</header>
 
   <main>
     <!-- Physics Section -->
     <section id="physics">
       <h2>Physics</h2>
-      <a href="https://www2.igchkshop.dpdns.org/mock1/Notes%20on%20Physics.pdf" target="_blank">Notes of Physics</a>
-      <a href="https://www2.igchkshop.dpdns.org/mock1/Predicted%20QER%20Physics.pdf" target="_blank">Predicted QER Physics</a>
+      <a class="link-btn" href="https://www2.igchkshop.dpdns.org/mock1/Notes%20on%20Physics.pdf" target="_blank">📘 Notes of Physics</a>
+      <a class="link-btn" href="https://www2.igchkshop.dpdns.org/mock1/Predicted%20QER%20Physics.pdf" target="_blank">📄 Predicted QER Physics</a>
     </section>
 
     <!-- Biology Section -->
     <section id="biology">
       <h2>Biology</h2>
-      <a href="https://www2.igchkshop.dpdns.org/mock1/Notes%20on%20Biology.pdf" target="_blank">Notes of Biology</a>
-      <a href="https://www2.igchkshop.dpdns.org/mock1/Predicted%20QER%20Biology.pdf" target="_blank">Predicted QER Biology</a>
+      <a class="link-btn" href="https://www2.igchkshop.dpdns.org/mock1/Notes%20on%20Biology.pdf" target="_blank">📘 Notes of Biology</a>
+      <a class="link-btn" href="https://www2.igchkshop.dpdns.org/mock1/Predicted%20QER%20Biology.pdf" target="_blank">📄 Predicted QER Biology</a>
     </section>
 
     <!-- A2 Paper Section -->
@@ -101,6 +122,7 @@
       <h2>A2 Paper</h2>
       <p>This section is password protected.</p>
       <input type="password" id="a2password" placeholder="Enter password">
+      <br>
       <button class="btn" onclick="checkPassword()">Access A2 Paper</button>
     </section>
 
@@ -112,7 +134,7 @@
   </main>
 
   <footer>
-    &copy; 2025 IGC HK Exam | All Rights Reserved
+    &copy; 2025 IGC HK Exam – WJEC | All Rights Reserved
   </footer>
 
   <script>
