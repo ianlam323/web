@@ -145,10 +145,100 @@
       header{gap:10px}
       .logo{width:48px;height:48px}
     }
+
+    /* Password screen styles */
+    #passwordScreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 20px;
+    }
+
+    .password-container {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 30px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.8);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .password-container h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .password-container p {
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .password-input {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      font-size: 16px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+
+    .password-input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .password-submit {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .password-submit:hover {
+      background: #1976d2;
+    }
+
+    .error-message {
+      color: #f44336;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      display: none;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap" role="main">
+  <!-- Password Screen -->
+  <div id="passwordScreen">
+    <div class="password-container">
+      <h2>Protected Content</h2>
+      <p>Please enter the password to access the exam papers.</p>
+      <input type="password" id="passwordInput" class="password-input" placeholder="Enter password">
+      <button id="passwordSubmit" class="password-submit">Access Papers</button>
+      <div id="errorMessage" class="error-message">Incorrect password. Please try again.</div>
+    </div>
+  </div>
+
+  <!-- Main Content (hidden until password is entered) -->
+  <div class="wrap" role="main" id="mainContent" style="display: none;">
     <header>
       <div class="logo" aria-hidden="true">A2</div>
       <div>
@@ -162,7 +252,7 @@
         <div class="subject" id="bio-u3">Biology — Paper 3</div>
         <div class="meta">S25 A2 Biology, Unit 3 — Question Paper</div>
         <div class="links">
-          <a href="https://www2.igchkshop.dpdns.org/a2-paper/s25-biology-u3-qp.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+          <a href="https://www2.igchkshop.dpdns.org/locked/a2-paper/s25-biology-u3-qp.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
         </div>
       </article>
 
@@ -170,7 +260,7 @@
         <div class="subject" id="bio-u4">Biology — Paper 4</div>
         <div class="meta">S25 A2 Biology, Unit 4 — Question Paper</div>
         <div class="links">
-          <a href="https://www2.igchkshop.dpdns.org/a2-paper/s25-biology-u4-qp.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+          <a href="https://www2.igchkshop.dpdns.org/locked/a2-paper/s25-biology-u4-qp.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
         </div>
       </article>
 
@@ -178,7 +268,7 @@
         <div class="subject" id="chem-u3">Chemistry — Paper 3</div>
         <div class="meta">S25 A2 Chemistry, Unit 3 — Question Paper</div>
         <div class="links">
-          <a href="https://www2.igchkshop.dpdns.org/a2-paper/s25-chemistry-u3-qp.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+          <a href="https://www2.igchkshop.dpdns.org/locked/a2-paper/s25-chemistry-u3-qp.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
         </div>
       </article>
 
@@ -186,7 +276,7 @@
         <div class="subject" id="chem-u4">Chemistry — Paper 4</div>
         <div class="meta">S25 A2 Chemistry, Unit 4 — Question Paper</div>
         <div class="links">
-          <a href="https://www2.igchkshop.dpdns.org/a2-paper/s25-chemistry-u4-qp.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+          <a href="https://www2.igchkshop.dpdns.org/locked/a2-paper/s25-chemistry-u4-qp.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
         </div>
       </article>
 
@@ -194,7 +284,7 @@
         <div class="subject" id="math-u3">Maths — Paper 3</div>
         <div class="meta">S25 A2 Maths, Unit 3 — Question Paper</div>
         <div class="links">
-          <a href="https://www2.igchkshop.dpdns.org/a2-paper/s25-maths-u3-qp.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+          <a href="https://www2.igchkshop.dpdns.org/locked/a2-paper/s25-maths-u3-qp.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
         </div>
       </article>
 
@@ -202,7 +292,7 @@
         <div class="subject" id="math-u4">Maths — Paper 4</div>
         <div class="meta">S25 A2 Maths, Unit 4 — Question Paper</div>
         <div class="links">
-          <a href="https://www2.igchkshop.dpdns.org/a2-paper/s25-maths-u4-qp.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+          <a href="https://www2.igchkshop.dpdns.org/locked/a2-paper/s25-maths-u4-qp.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
         </div>
       </article>
     </section>
@@ -212,5 +302,48 @@
       <div class="small">Made for quick access • 2025</div>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const passwordScreen = document.getElementById('passwordScreen');
+      const mainContent = document.getElementById('mainContent');
+      const passwordInput = document.getElementById('passwordInput');
+      const passwordSubmit = document.getElementById('passwordSubmit');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      // Check if user is already authenticated
+      if (sessionStorage.getItem('authenticated') === 'true') {
+        passwordScreen.style.display = 'none';
+        mainContent.style.display = 'block';
+      }
+      
+      // Handle password submission
+      function checkPassword() {
+        const password = passwordInput.value;
+        
+        if (password === '2025wjec') {
+          // Correct password
+          sessionStorage.setItem('authenticated', 'true');
+          passwordScreen.style.display = 'none';
+          mainContent.style.display = 'block';
+          errorMessage.style.display = 'none';
+        } else {
+          // Incorrect password
+          errorMessage.style.display = 'block';
+          passwordInput.value = '';
+          passwordInput.focus();
+        }
+      }
+      
+      // Event listeners
+      passwordSubmit.addEventListener('click', checkPassword);
+      
+      passwordInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          checkPassword();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
